@@ -1,0 +1,24 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+
+const projects = await getCollection("projects");
+---
+
+<BaseLayout title="Portfolio | Diego">
+  <h1 class="text-3xl font-semibold tracking-tight">Portfolio</h1>
+  <p class="mt-2 text-zinc-300">Case studies (content, social, marketing).</p>
+
+  <div class="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+    {projects.map((p) => (
+      <a
+        class="rounded-2xl border border-zinc-800 bg-zinc-950 p-4 hover:bg-zinc-900"
+        href={`/portfolio/${p.slug}`}
+      >
+        <div class="text-xs text-zinc-400">{String(p.data.date)}</div>
+        <div class="mt-1 font-medium">{p.data.title}</div>
+        <div class="mt-1 text-sm text-zinc-300">{p.data.role}</div>
+      </a>
+    ))}
+  </div>
+</BaseLayout>

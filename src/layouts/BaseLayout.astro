@@ -1,0 +1,155 @@
+---
+const {
+  title = "Diego | Portfolio",
+  description = "Portfolio",
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="description" content={description} />
+    <title>{title}</title>
+
+    <style is:global>
+      @import "../styles/global.css";
+    </style>
+  </head>
+
+  <body class="min-h-screen bg-zinc-950 text-zinc-100 antialiased">
+    <!-- Top glass navbar -->
+<!-- Top glass navbar (mobile-safe) -->
+<header class="fixed top-0 z-50 w-full">
+  <div class="mx-auto max-w-6xl px-3 pt-3 sm:px-4 sm:pt-4">
+    <div class="rounded-[28px] border border-zinc-800/70 bg-zinc-950/35 px-3 py-3 backdrop-blur shadow-[0_0_0_1px_rgba(255,255,255,0.03)] sm:px-4">
+      <!-- MOBILE: 2-row layout -->
+      <div class="flex flex-col gap-2 md:hidden">
+        <!-- Row 1: Brand + CTA -->
+        <div class="flex items-center justify-between gap-3">
+          <a href="/" class="flex items-center gap-2 min-w-0">
+            <span class="h-6 w-6 shrink-0 rounded-full border border-zinc-700/80 bg-zinc-950/50"></span>
+            <span class="truncate text-sm font-semibold tracking-tight">Diego.portfolio</span>
+          </a>
+
+          <a class="cta" href="/portfolio">
+            View Portfolio →
+          </a>
+        </div>
+
+        <!-- Row 2: actions -->
+        <div class="flex items-center justify-end gap-2">
+          <a class="chip" href="mailto:diegoernestoporrasvera@gmail.com" title="Email">
+            Email
+          </a>
+          <a class="chip" href="/contact">
+            Contact
+          </a>
+        </div>
+      </div>
+
+      <!-- DESKTOP -->
+      <div class="hidden md:flex md:items-center md:justify-between">
+        <!-- Brand -->
+        <a href="/" class="flex items-center gap-2">
+          <span class="h-6 w-6 rounded-full border border-zinc-700/80 bg-zinc-950/50"></span>
+          <span class="text-sm font-semibold tracking-tight">Diego.portfolio</span>
+        </a>
+
+        <!-- Nav -->
+        <nav class="hidden items-center gap-6 md:flex">
+          <a class="navlink" href="/portfolio">Portfolio</a>
+          <a class="navlink" href="/about">About</a>
+          <a class="navlink" href="/resume">Resume</a>
+
+          <details class="group relative">
+            <summary class="navlink list-none cursor-pointer select-none">
+              All Pages
+              <span class="ml-1 inline-block transition group-open:rotate-180">▾</span>
+            </summary>
+
+            <div class="absolute left-1/2 mt-3 w-56 -translate-x-1/2 rounded-2xl border border-zinc-800/80 bg-zinc-950/75 p-2 backdrop-blur">
+              <a class="dditem" href="/portfolio">Portfolio</a>
+              <a class="dditem" href="/about">About</a>
+              <a class="dditem" href="/resume">Resume</a>
+              <a class="dditem" href="/contact">Contact</a>
+            </div>
+          </details>
+        </nav>
+
+        <!-- Right actions -->
+        <div class="flex items-center gap-2">
+          <a class="chip" href="mailto:diegoernestoporrasvera@gmail.com" title="Email">Email</a>
+          <a class="chip" href="/contact">Contact</a>
+          <a class="cta" href="/portfolio">View Portfolio →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+    <!-- Page content -->
+     <main class="mx-auto w-full max-w-6xl px-4 pt-32 pb-14 sm:pt-28">
+       <slot />
+     </main>
+
+
+    <footer class="mx-auto max-w-6xl px-4 pb-10 text-xs text-zinc-500">
+      © {new Date().getFullYear()} Diego. All rights reserved.
+    </footer>
+
+    <style is:global>
+      .navlink {
+        font-size: 0.9rem;
+        color: rgb(212 212 216 / 0.9);
+        transition: color 200ms ease, opacity 200ms ease;
+      }
+      .navlink:hover {
+        color: white;
+      }
+      .chip {
+        border: 1px solid rgb(63 63 70 / 0.8);
+        background: rgb(9 9 11 / 0.35);
+        padding: 0.42rem 0.75rem;
+        border-radius: 9999px;
+        font-size: 0.8rem;
+        color: rgb(228 228 231 / 0.9);
+        backdrop-filter: blur(10px);
+        transition: border-color 200ms ease, background 200ms ease, transform 200ms ease;
+      }
+      .chip:hover {
+        border-color: rgb(113 113 122 / 0.9);
+        background: rgb(24 24 27 / 0.45);
+        transform: translateY(-1px);
+      }
+      .cta {
+        border: 1px solid rgb(63 63 70 / 0.8);
+        background: rgb(9 9 11 / 0.25);
+        padding: 0.55rem 0.85rem;
+        border-radius: 9999px;
+        font-size: 0.85rem;
+        color: white;
+        transition: transform 200ms ease, border-color 200ms ease, background 200ms ease;
+      }
+      .cta:hover {
+        transform: translateY(-1px);
+        border-color: rgb(148 163 184 / 0.65);
+        background: rgb(24 24 27 / 0.45);
+      }
+
+      .dditem {
+        display: block;
+        padding: 0.55rem 0.75rem;
+        border-radius: 0.9rem;
+        color: rgb(228 228 231 / 0.9);
+        font-size: 0.85rem;
+        transition: background 200ms ease;
+      }
+      .dditem:hover {
+        background: rgb(24 24 27 / 0.65);
+      }
+      details > summary::-webkit-details-marker { display: none; }
+    </style>
+  </body>
+</html>

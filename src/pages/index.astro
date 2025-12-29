@@ -1,0 +1,29 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import NetworkBackground from "../components/react/NetworkBackground";
+
+import Hero from "../components/home/Hero.astro";
+import WhatIDo from "../components/home/WhatIDo.astro";
+import Experience from "../components/home/Experience.astro";
+import EducationSkills from "../components/home/EducationSkills.astro";
+
+const email = "diegoernestoporrasvera@gmail.com";
+const website = "https://diegousa.com";
+const linkedin = "https://www.linkedin.com/in/diego-ernesto-porras-vera-76a77a2a4/";
+---
+
+<BaseLayout
+  title="Diego Porras Vera | Diego Dev"
+  description="Systems & Informatics Engineer. Web Developer, Automation (n8n), and Creative Technologist (EN/ES)."
+>
+  <!-- Particles background ONLY Home -->
+  <div class="pointer-events-none fixed inset-0 -z-10">
+    <NetworkBackground client:only="react" className="absolute inset-0" />
+    <div class="absolute inset-0 bg-gradient-to-b from-zinc-950/40 via-zinc-950/60 to-zinc-950"></div>
+  </div>
+
+  <Hero email={email} website={website} linkedin={linkedin} />
+  <WhatIDo />
+  <Experience />
+  <EducationSkills />
+</BaseLayout>

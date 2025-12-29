@@ -1,0 +1,28 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+
+export async function getStaticPaths() {
+  const projects = await getCollection("projects");
+  return projects.map((p) => ({ params: { slug: p.slug } }));
+}
+
+const { slug } = Astro.params;
+const projects = await getCollection("projects");
+const project = projects.find((p) => p.slug === slug);
+
+if (!project) throw new Error(`Project not found: ${slug}`);
+
+const { Content } = await project.render();
+---
+
+<BaseLayout title={`${project.data.title} | Portfolio`} description={project.data.role}>
+  <a class="text-sm text-zinc-300 hover:text-white" href="/portfolio">← Back</a>
+
+  <h1 class="mt-6 text-3xl font-semibold tracking-tight">{project.data.title}</h1>
+  <p class="mt-2 text-zinc-300">{project.data.role}</p>
+
+  <article class="prose prose-invert mt-10 max-w-none">
+    <Content />
+  </article>
+</BaseLayout>

@@ -1,0 +1,61 @@
+---
+const roles = [
+  {
+    title: "Web & Digital Marketing Specialist",
+    org: "Boston Tech Service",
+    where: "Boston, MA",
+    when: "Aug 2024 – Nov 2025",
+    bullets: [
+      "Built custom websites and landing pages for small businesses.",
+      "Designed branded assets for businesses (print + digital).",
+      "Set up and managed Facebook/Instagram/TikTok presence.",
+      "Improved local visibility through Google Business Profile optimization.",
+      "Delivered QR-based digital menus and quick-turn promotional pages.",
+    ],
+  },
+  {
+    title: "Digital Marketing Manager",
+    org: "Stars Branding",
+    where: "East Boston, MA",
+    when: "Apr 2024 – Jul 2024",
+    bullets: [
+      "Produced marketing creatives and campaign visuals for restaurants.",
+      "Planned and edited video ads end-to-end (concept → edit → publish-ready formats).",
+      "Executed campaigns within timelines and budget constraints.",
+      "Optimized content output for social platforms.",
+    ],
+  },
+  {
+    title: "Designer / Multimedia Generalist",
+    org: "Freelance",
+    where: "Peru",
+    when: "2019 – 2024",
+    bullets: [
+      "Produced videos, graphics, and audio content for brands and events.",
+      "Delivered consistent creative output across multiple tools and formats.",
+    ],
+  },
+];
+---
+
+<section class="mt-14">
+  <h2 class="text-xl font-semibold tracking-tight">Experience</h2>
+
+  <div class="mt-5 grid gap-4">
+    {roles.map((r) => (
+      <article class="rounded-2xl border border-zinc-800 bg-zinc-950 p-6">
+        <div class="flex flex-col gap-1 md:flex-row md:items-baseline md:justify-between">
+          <div>
+            <h3 class="font-semibold">{r.title}</h3>
+            <p class="text-sm text-zinc-400">{r.org} · {r.where}</p>
+          </div>
+          <p class="text-sm text-zinc-400">{r.when}</p>
+        </div>
+
+        <ul class="mt-4 list-disc space-y-2 pl-5 text-sm text-zinc-300">
+          {r.bullets.map((b) => <li>{b}</li>)}
+        </ul>
+      </article>
+    ))}
+  </div>
+</section>

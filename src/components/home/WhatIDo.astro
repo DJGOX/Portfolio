@@ -1,0 +1,38 @@
+---
+const items = [
+  {
+    title: "Web Development",
+    body:
+      "Modern, responsive websites and landing pages with clean UX, performance, and maintainable structure (Astro, React, Tailwind).",
+  },
+  {
+    title: "Automation (n8n)",
+    body:
+      "Workflow automation for marketing, notifications, and integrations across tools—designed to reduce ops cost and increase speed.",
+  },
+  {
+    title: "Creative Production",
+    body:
+      "Video editing, motion graphics, and social-first content production using DaVinci Resolve + Adobe tools.",
+  },
+];
+---
+
+<section class="mt-14">
+  <div class="mb-6">
+    <h2 class="text-xl font-semibold tracking-tight">What I do</h2>
+    <p class="mt-2 max-w-2xl text-sm text-zinc-300">
+      I build practical, recruiter-friendly projects across web, automation, and digital production—focused on real business outcomes.
+    </p>
+  </div>
+
+  <div class="grid gap-5 md:grid-cols-3">
+    {items.map((x) => (
+      <div class="group rounded-2xl border border-zinc-800/80 bg-zinc-950/60 p-6 backdrop-blur transition hover:border-zinc-700/80 hover:bg-zinc-950/80">
+        <h3 class="font-semibold">{x.title}</h3>
+        <p class="mt-2 text-sm text-zinc-300">{x.body}</p>
+        <div class="mt-4 h-px w-10 bg-zinc-800 transition group-hover:w-16"></div>
+      </div>
+    ))}
+  </div>
+</section>

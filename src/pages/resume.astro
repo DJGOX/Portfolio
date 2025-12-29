@@ -1,0 +1,156 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="Resume | Diego Porras Vera" description="Recruiter-friendly resume: web dev, automation, multimedia production. EN/ES.">
+  <header class="flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
+    <div>
+      <p class="text-xs uppercase tracking-wider text-zinc-400">Resume</p>
+      <h1 class="mt-2 text-3xl font-semibold tracking-tight">Diego Porras Vera</h1>
+      <p class="mt-2 text-zinc-300">Brookline, MA · Work Authorization (U.S.) · English / Spanish</p>
+    </div>
+
+    <div class="flex gap-2">
+      <a class="rounded-xl border border-zinc-800 bg-zinc-950 px-4 py-2 text-sm hover:bg-zinc-900" href="/contact">Contact</a>
+      <a class="rounded-xl bg-white px-4 py-2 text-sm font-medium text-zinc-950 hover:bg-zinc-200" href="/portfolio">Portfolio</a>
+    </div>
+  </header>
+
+  <section class="mt-10 grid gap-5 lg:grid-cols-3">
+    <div class="lg:col-span-2 space-y-5">
+      <div class="rounded-2xl border border-zinc-800 bg-zinc-950 p-6">
+        <h2 class="font-semibold">Professional summary</h2>
+        <p class="mt-3 text-sm text-zinc-300">
+          Systems Engineer with practical experience in modern web development, automation, and multimedia production.
+          Strong focus on scalable architecture (client/server), REST APIs, JWT authentication, role-based access, and
+          admin dashboards. Comfortable collaborating across technical and operational teams (EN/ES).
+        </p>
+      </div>
+
+      <div class="rounded-2xl border border-zinc-800 bg-zinc-950 p-6">
+        <h2 class="font-semibold">Experience</h2>
+
+        <div class="mt-4 space-y-6 text-sm text-zinc-300">
+          <div>
+            <div class="flex flex-wrap items-center justify-between gap-2">
+              <span class="font-medium text-zinc-100">CYBER BYTE (Perú) — Digital Architecture & Development</span>
+              <span class="text-zinc-400">Project / Ongoing</span>
+            </div>
+            <ul class="mt-2 list-disc space-y-2 pl-5">
+              <li>Built web + backend architecture with REST APIs, JWT auth, roles/permissions, and admin dashboards.</li>
+              <li>Designed inventory automation approach and shared data model for web/app usage.</li>
+              <li>Deployed cloud infrastructure (Railway) and structured system for scalability.</li>
+              <li>Cross-border collaboration: Diego (U.S.) dev/tech, Franco (Perú) sales, Pamela (Perú) admin/inventory.</li>
+            </ul>
+          </div>
+
+          <div>
+            <div class="flex flex-wrap items-center justify-between gap-2">
+              <span class="font-medium text-zinc-100">DJ GOX / SONICA Entertainment — Digital Operations</span>
+              <span class="text-zinc-400">Ongoing</span>
+            </div>
+            <ul class="mt-2 list-disc space-y-2 pl-5">
+              <li>Brand and website development; marketing automation for promotions and booking workflows.</li>
+              <li>Created digital assets (flyers, ads, social content) and production pipelines for event marketing.</li>
+            </ul>
+          </div>
+
+          <div>
+            <div class="flex flex-wrap items-center justify-between gap-2">
+              <span class="font-medium text-zinc-100">Dunkin’ Donuts (MA) — Operations & Customer Service</span>
+              <span class="text-zinc-400">Current</span>
+            </div>
+            <p class="mt-2 text-zinc-300">
+              Support role while building long-term technology and creative projects.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="rounded-2xl border border-zinc-800 bg-zinc-950 p-6">
+        <h2 class="font-semibold">Education</h2>
+        <div class="mt-4 text-sm text-zinc-300">
+          <div class="flex flex-wrap items-center justify-between gap-2">
+            <span class="font-medium text-zinc-100">Universidad Continental (Perú)</span>
+            <span class="text-zinc-400">Completed</span>
+          </div>
+          <p class="mt-1">B.S. in Systems Engineering & Informatics</p>
+
+          <div class="mt-4">
+            <p class="text-zinc-400">Key academic areas</p>
+            <div class="mt-2 flex flex-wrap gap-2">
+              {[
+                "Software development",
+                "Information systems",
+                "Databases",
+                "Software architecture",
+                "Networks & security fundamentals",
+                "Tech project management",
+              ].map((s) => (
+                <span class="rounded-full border border-zinc-800 px-3 py-1 text-xs text-zinc-300">{s}</span>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <aside class="space-y-5">
+      <div class="rounded-2xl border border-zinc-800 bg-zinc-950 p-6">
+        <h2 class="font-semibold">Tech stack</h2>
+
+        <div class="mt-4 space-y-4 text-sm text-zinc-300">
+          <div>
+            <p class="text-zinc-400">Frontend</p>
+            <div class="mt-2 flex flex-wrap gap-2">
+              {["HTML5", "CSS3", "Tailwind CSS", "JavaScript (ES6+)", "React", "Next.js", "Astro", "Vite"].map((t) => (
+                <span class="rounded-full border border-zinc-800 px-3 py-1 text-xs text-zinc-300">{t}</span>
+              ))}
+            </div>
+          </div>
+
+          <div>
+            <p class="text-zinc-400">Backend</p>
+            <div class="mt-2 flex flex-wrap gap-2">
+              {["Node.js", "Express.js", "REST APIs", "JWT Auth", "Roles/Permissions"].map((t) => (
+                <span class="rounded-full border border-zinc-800 px-3 py-1 text-xs text-zinc-300">{t}</span>
+              ))}
+            </div>
+          </div>
+
+          <div>
+            <p class="text-zinc-400">Databases</p>
+            <div class="mt-2 flex flex-wrap gap-2">
+              {["MongoDB", "Data modeling", "Frontend–backend integration"].map((t) => (
+                <span class="rounded-full border border-zinc-800 px-3 py-1 text-xs text-zinc-300">{t}</span>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="rounded-2xl border border-zinc-800 bg-zinc-950 p-6">
+        <h2 class="font-semibold">Automation</h2>
+        <p class="mt-3 text-sm text-zinc-300">
+          Advanced use of n8n for marketing automation, platform integrations, message flows, and conditional logic to reduce cost and increase efficiency.
+        </p>
+      </div>
+
+      <div class="rounded-2xl border border-zinc-800 bg-zinc-950 p-6">
+        <h2 class="font-semibold">Multimedia</h2>
+        <div class="mt-3 flex flex-wrap gap-2 text-xs text-zinc-300">
+          {["DaVinci Resolve Studio 20", "Adobe Creative Cloud", "Final Cut Pro", "Affinity Suite", "Motion graphics", "Tracking/VFX"].map((t) => (
+            <span class="rounded-full border border-zinc-800 px-3 py-1">{t}</span>
+          ))}
+        </div>
+      </div>
+
+      <div class="rounded-2xl border border-zinc-800 bg-zinc-950 p-6">
+        <h2 class="font-semibold">3D / XR</h2>
+        <p class="mt-3 text-sm text-zinc-300">
+          3D modeling (Blender). Interest and practice in Unity and XR/VR experiences—combining engineering with visual creativity.
+        </p>
+      </div>
+    </aside>
+  </section>
+</BaseLayout>

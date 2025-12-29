@@ -1,0 +1,46 @@
+---
+type Props = {
+  location?: string;
+  email: string;
+  website?: string;
+  linkedin?: string;
+};
+
+const {
+  location = "Brookline, MA",
+  email,
+  website = "https://diegousa.com",
+  linkedin = "https://www.linkedin.com/in/diego-ernesto-porras-vera-76a77a2a4/",
+} = Astro.props;
+---
+
+<div class="mt-3 flex flex-wrap items-center gap-2 text-xs">
+  <span class="rounded-full border border-zinc-800 bg-zinc-950/60 px-3 py-1 text-zinc-300">
+    {location}
+  </span>
+
+  <a
+    class="rounded-full border border-zinc-800 bg-zinc-950/60 px-3 py-1 text-zinc-300 transition hover:bg-zinc-900 hover:text-white"
+    href={`mailto:${email}`}
+  >
+    {email}
+  </a>
+
+  <a
+    class="rounded-full border border-zinc-800 bg-zinc-950/60 px-3 py-1 text-zinc-300 transition hover:bg-zinc-900 hover:text-white"
+    href={linkedin}
+    target="_blank"
+    rel="noreferrer"
+  >
+    LinkedIn
+  </a>
+
+  <a
+    class="rounded-full border border-zinc-800 bg-zinc-950/60 px-3 py-1 text-zinc-300 transition hover:bg-zinc-900 hover:text-white"
+    href={website}
+    target="_blank"
+    rel="noreferrer"
+  >
+    diegousa.com
+  </a>
+</div>

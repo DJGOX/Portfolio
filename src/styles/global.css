@@ -1,0 +1,17 @@
+@import "tailwindcss";
+
+/* Design tokens base */
+:root {
+  color-scheme: dark;
+}
+
+/* Base */
+html, body { height: 100%; }
+body { margin: 0; }
+
+/* Force tsparticles canvas to fill its container */
+#tsparticles,
+#tsparticles canvas {
+  width: 100% !important;
+  height: 100% !important;
+}

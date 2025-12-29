@@ -1,0 +1,79 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="About | Diego Porras Vera" description="Multidisciplinary systems engineer: web, automation, and digital production.">
+  <header>
+    <p class="text-xs uppercase tracking-wider text-zinc-400">Profile</p>
+    <h1 class="mt-2 text-3xl font-semibold tracking-tight">About</h1>
+    <p class="mt-3 max-w-3xl text-zinc-300">
+      Peruvian Systems Engineer based in Brookline, Massachusetts. Professional focus on modern web development,
+      automation, and multimedia production—building solutions for real businesses with measurable impact.
+    </p>
+  </header>
+
+  <section class="mt-10 grid gap-5 md:grid-cols-2">
+    <div class="rounded-2xl border border-zinc-800 bg-zinc-950 p-6">
+      <h2 class="font-semibold">Personal</h2>
+      <dl class="mt-4 grid grid-cols-1 gap-3 text-sm text-zinc-300">
+        <div class="flex items-center justify-between"><dt class="text-zinc-400">Name</dt><dd>Diego Porras Vera</dd></div>
+        <div class="flex items-center justify-between"><dt class="text-zinc-400">Aliases</dt><dd>Diego Dev / DJ GOX</dd></div>
+        <div class="flex items-center justify-between"><dt class="text-zinc-400">Nationality</dt><dd>Peruvian</dd></div>
+        <div class="flex items-center justify-between"><dt class="text-zinc-400">Location</dt><dd>Brookline, MA (USA)</dd></div>
+        <div class="flex items-center justify-between"><dt class="text-zinc-400">Work authorization</dt><dd>Authorized to work in the U.S.</dd></div>
+      </dl>
+    </div>
+
+    <div class="rounded-2xl border border-zinc-800 bg-zinc-950 p-6">
+      <h2 class="font-semibold">Languages</h2>
+      <div class="mt-4 space-y-3 text-sm text-zinc-300">
+        <div class="flex items-center justify-between">
+          <span>Spanish</span><span class="text-zinc-400">Native</span>
+        </div>
+        <div class="flex items-center justify-between">
+          <span>English</span><span class="text-zinc-400">Professional / Operational</span>
+        </div>
+      </div>
+
+      <div class="mt-6 border-t border-zinc-800 pt-6">
+        <h3 class="font-semibold">Core competencies</h3>
+        <div class="mt-3 flex flex-wrap gap-2 text-sm">
+          {[
+            "Analytical thinking",
+            "Problem-solving",
+            "Solution architecture",
+            "Self-directed learning",
+            "Scalability mindset",
+            "Business + technology alignment",
+            "Technical communication (EN/ES)",
+          ].map((s) => (
+            <span class="rounded-full border border-zinc-800 px-3 py-1 text-zinc-300">{s}</span>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="mt-10 grid gap-5 md:grid-cols-3">
+    <div class="rounded-2xl border border-zinc-800 bg-zinc-950 p-6">
+      <h2 class="font-semibold">Web & software</h2>
+      <p class="mt-2 text-sm text-zinc-300">Frontend + backend with scalable architecture and auth/roles.</p>
+    </div>
+    <div class="rounded-2xl border border-zinc-800 bg-zinc-950 p-6">
+      <h2 class="font-semibold">Automation</h2>
+      <p class="mt-2 text-sm text-zinc-300">n8n integrations, marketing flows, and operational efficiency.</p>
+    </div>
+    <div class="rounded-2xl border border-zinc-800 bg-zinc-950 p-6">
+      <h2 class="font-semibold">Creative tech</h2>
+      <p class="mt-2 text-sm text-zinc-300">Video, motion, and emerging tech (3D/XR) bridging engineering + visuals.</p>
+    </div>
+  </section>
+
+  <section class="mt-10 rounded-2xl border border-zinc-800 bg-zinc-950 p-6">
+    <h2 class="font-semibold">Notable_trigger: MIT 3D modeling competition</h2>
+    <p class="mt-3 text-sm text-zinc-300">
+      Participated in an international 3D modeling competition at MIT (U.S.). Focused on interdisciplinary work across
+      design, 3D representation, and technical creativity—experience that strengthens visual thinking and product execution.
+    </p>
+  </section>
+</BaseLayout>

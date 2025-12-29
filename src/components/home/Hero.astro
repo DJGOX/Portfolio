@@ -1,0 +1,91 @@
+---
+import ContactStrip from "./ContactStrip.astro";
+
+type Props = {
+  email: string;
+  linkedin: string;
+  website: string;
+};
+
+const { email, linkedin, website } = Astro.props;
+---
+
+<section class="relative overflow-hidden rounded-3xl border border-zinc-800 bg-zinc-950">
+  <!-- overlay for readability -->
+  <div class="pointer-events-none absolute inset-0 bg-gradient-to-b from-zinc-950/60 via-zinc-950/70 to-zinc-950"></div>
+
+  <div class="relative p-6 md:p-10">
+    <div class="grid gap-10 md:grid-cols-2 md:items-center">
+      <div>
+        <p class="text-sm text-zinc-400">
+          Diego Porras Vera · Brookline, MA · U.S. Work Authorization · EN/ES
+        </p>
+
+        <ContactStrip location="Brookline, MA" email={email} website={website} linkedin={linkedin} />
+
+        <h1 class="mt-4 text-4xl font-semibold tracking-tight md:text-5xl">
+          Systems &amp; Informatics Engineer
+          <span class="block text-zinc-200">Web Developer · Digital Marketing Specialist · Creative Technologist</span>
+        </h1>
+
+        <p class="mt-4 max-w-xl text-zinc-300">
+          I build modern websites and digital systems that help businesses grow—combining web development,
+          automation, and multimedia production.
+        </p>
+
+        <div class="mt-6 flex flex-wrap gap-3">
+          <a class="rounded-xl bg-white px-5 py-3 text-sm font-medium text-zinc-950 transition hover:bg-zinc-200" href="/portfolio">
+            View Portfolio
+          </a>
+
+          <a class="rounded-xl border border-zinc-800 bg-zinc-950 px-5 py-3 text-sm font-medium text-zinc-100 transition hover:bg-zinc-900" href="/resume">
+            Download Resume
+          </a>
+
+          <a class="rounded-xl border border-zinc-800 bg-zinc-950 px-5 py-3 text-sm font-medium text-zinc-100 transition hover:bg-zinc-900" href={`mailto:${email}`}>
+            Email Me
+          </a>
+
+          <a
+            class="rounded-xl border border-zinc-800 bg-zinc-950 px-5 py-3 text-sm font-medium text-zinc-100 transition hover:bg-zinc-900"
+            href={linkedin}
+            target="_blank"
+            rel="noreferrer"
+          >
+            LinkedIn
+          </a>
+        </div>
+
+        <div class="mt-6 flex flex-wrap gap-2 text-xs text-zinc-400">
+          <span class="rounded-full border border-zinc-800 px-3 py-1">Astro</span>
+          <span class="rounded-full border border-zinc-800 px-3 py-1">React</span>
+          <span class="rounded-full border border-zinc-800 px-3 py-1">Tailwind</span>
+          <span class="rounded-full border border-zinc-800 px-3 py-1">Node/Express</span>
+          <span class="rounded-full border border-zinc-800 px-3 py-1">MongoDB</span>
+          <span class="rounded-full border border-zinc-800 px-3 py-1">Automation</span>
+          <span class="rounded-full border border-zinc-800 px-3 py-1">DaVinci / Adobe</span>
+        </div>
+      </div>
+
+      <div class="rounded-3xl border border-zinc-800 bg-gradient-to-b from-zinc-900/70 to-zinc-950 p-8">
+        <h2 class="text-lg font-semibold tracking-tight">Target roles</h2>
+        <div class="mt-4 grid gap-3 text-sm text-zinc-300">
+          <div class="rounded-2xl border border-zinc-800 bg-zinc-950/60 p-4">
+            Web Developer · Software Developer · Digital Solutions Engineer
+          </div>
+          <div class="rounded-2xl border border-zinc-800 bg-zinc-950/60 p-4">
+            Creative Technologist (engineering + visual creativity)
+          </div>
+        </div>
+
+        <div class="mt-6 border-t border-zinc-800 pt-6">
+          <p class="text-sm text-zinc-300">
+            Also active as <span class="font-medium text-zinc-100">DJ GOX</span> /{" "}
+            <span class="font-medium text-zinc-100">SONICA Entertainment</span>—real-world application of
+            branding, marketing, and production systems.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
