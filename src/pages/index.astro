@@ -4,8 +4,10 @@ import NetworkBackground from "../components/react/NetworkBackground";
 
 import Hero from "../components/home/Hero.astro";
 import WhatIDo from "../components/home/WhatIDo.astro";
+import Metrics from "../components/home/Metrics.astro";
 import Experience from "../components/home/Experience.astro";
 import EducationSkills from "../components/home/EducationSkills.astro";
+
 
 const email = "diegoernestoporrasvera@gmail.com";
 const website = "https://diegousa.com";
@@ -24,6 +26,7 @@ const linkedin = "https://www.linkedin.com/in/diego-ernesto-porras-vera-76a77a2a
 
   <Hero email={email} website={website} linkedin={linkedin} />
   <WhatIDo />
+  <Metrics />
   <Experience />
   <EducationSkills />
 </BaseLayout>
