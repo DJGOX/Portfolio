@@ -8,6 +8,10 @@ type Props = {
 };
 
 const { email, linkedin, website } = Astro.props;
+
+// PDF must exist at: /public/resume/diego-ernesto-resume.pdf
+const resumeUrl = "/resume/diego-ernesto-resume.pdf";
+const resumeFileName = "Diego-Ernesto-Porras-Vera-Resume.pdf";
 ---
 
 <section class="relative overflow-hidden rounded-3xl border border-zinc-800 bg-zinc-950">
@@ -24,7 +28,7 @@ const { email, linkedin, website } = Astro.props;
         <ContactStrip location="Brookline, MA" email={email} website={website} linkedin={linkedin} />
 
         <h1 class="mt-4 text-4xl font-semibold tracking-tight md:text-5xl">
-           <!-- Systems &amp; Informatics Engineer -->
+          <!-- Systems &amp; Informatics Engineer -->
           <span class="block text-zinc-200">Digital Marketing Specialist - Social Media & Content Strategist </span>
         </h1>
 
@@ -38,7 +42,12 @@ const { email, linkedin, website } = Astro.props;
             View Portfolio
           </a>
 
-          <a class="rounded-xl border border-zinc-800 bg-zinc-950 px-5 py-3 text-sm font-medium text-zinc-100 transition hover:bg-zinc-900" href="/resume">
+          <!-- Downloadable resume link (PDF in /public/resume/) -->
+          <a
+            class="rounded-xl border border-zinc-800 bg-zinc-950 px-5 py-3 text-sm font-medium text-zinc-100 transition hover:bg-zinc-900"
+            href={resumeUrl}
+            download={resumeFileName}
+          >
             Download Resume
           </a>
 
